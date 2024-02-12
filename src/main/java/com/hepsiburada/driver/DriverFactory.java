@@ -25,7 +25,7 @@ public class DriverFactory {
         if(driver == null){
             driverThreadLocal.set(getBrowser().getWebDriver());
         }
-        driverThreadLocal.get().manage().timeouts().implicitlyWait(getImplicitWait());
+        driverThreadLocal.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(getImplicitWait()));
         return driverThreadLocal.get();
     }
 

@@ -1,6 +1,5 @@
 package com.hepsiburada.utilities;
 
-import java.time.Duration;
 
 public class TimeUtil {
 
@@ -9,8 +8,8 @@ public class TimeUtil {
      *
      * @return long implicit wait
      */
-    public static Duration getImplicitWait(){
-        return Duration.parse(PropertyReader.getInstance()
+    public static long getImplicitWait(){
+        return Long.parseLong(PropertyReader.getInstance()
                 .getProperty(PropKey.IMPLICIT_WAIT.getPropVal()));
     }
 
@@ -19,8 +18,8 @@ public class TimeUtil {
      *
      * @return long explicit wait
      */
-    public static Duration getExplicitWait(){
-        return Duration.parse(PropertyReader.getInstance()
+    public static long getExplicitWait(){
+        return Long.parseLong(PropertyReader.getInstance()
                 .getProperty(PropKey.EXPLICIT_WAIT.getPropVal()));
     }
 }
